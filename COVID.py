@@ -9,7 +9,6 @@ from mpl_toolkits import mplot3d
 
 import os
 import warnings
-Filter Specific Warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 with warnings.catch_warnings():
     warnings.simplefilter("ignore", RuntimeWarning)
