@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from mpl_toolkits import mplot3d
 import streamlit as st
+import os
+
+install_path = os.getenv('INSTALL_PATH', '/default/path')
+
 
 
 import os
