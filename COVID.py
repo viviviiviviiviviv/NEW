@@ -64,7 +64,7 @@ plt.plot(data_frame['Country/Region'], data_frame['Confirmed'])
 plt.xlabel("Country/Region")
 plt.ylabel('Confirmed')
 plt.title('Confirmed cases country-wise', fontsize=16, fontweight='bold', style='italic')
-plt.show()
+st.pyplot()
 
 # Line plot for global trend of cases
 plt.figure(figsize=(15, 6))
@@ -76,25 +76,25 @@ plt.xlabel('Country/Region')
 plt.ylabel('No: of cases (in millions)')
 plt.title('Global Trend of Covid Cases')
 plt.legend()
-plt.show()
+st.pyplot()
 
 # Line plot for Confirmed vs Deaths
 plt.figure(figsize=(15, 4))
 sns.lineplot(x="Deaths", y="Confirmed", data=data_frame)
 plt.title('Confirmed cases vs Deaths')
-plt.show()
+st.pyplot()
 
 # Line plot for Confirmed vs Recovered
 plt.figure(figsize=(15, 4))
 sns.lineplot(x="Recovered", y="Confirmed", data=data_frame)
 plt.title('Confirmed cases vs Recovered')
-plt.show()
+st.pyplot()
 
 # Line plot for Confirmed vs Active cases
 plt.figure(figsize=(15, 4))
 sns.lineplot(x="Active", y='Confirmed', data=data_frame)
 plt.title('Confirmed cases vs Active')
-plt.show()
+st.pyplot()
 
 # Line plot for new cases, deaths, and recoveries
 plt.figure(figsize=(15, 6))
@@ -105,7 +105,7 @@ plt.xlabel('Country')
 plt.ylabel('No: of cases')
 plt.title('Global Trend of New Covid Cases')
 plt.legend()
-plt.show()
+st.pyplot()
 
 # Group by WHO Region
 Who_regionscon = data_frame.groupby('WHO Region')['Confirmed'].sum().sort_values()
@@ -119,7 +119,7 @@ sns.barplot(x="WHO Region", y='Confirmed', data=data_frame, palette='pastel')
 plt.figure(figsize=(4, 4))
 plt.pie(Who_regionscon, labels=Who_regionscon.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
 plt.title("Confirmed cases vs WHO Region")
-plt.show()
+st.pyplot()
 
 # Group by WHO Region for Deaths
 Who_regionsdea = data_frame.groupby('WHO Region')['Deaths'].sum().sort_values()
@@ -132,7 +132,7 @@ sns.barplot(x="WHO Region", y='Deaths', data=data_frame, palette='magma')
 # Pie chart for deaths by WHO Region
 plt.figure(figsize=(4, 4))
 plt.pie(Who_regionsdea, labels=Who_regionsdea.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('magma'))
-plt.show()
+st.pyplot()
 
 # Group by WHO Region for Recovered
 Who_regionsrec = data_frame.groupby('WHO Region')['Recovered'].sum().sort_values()
@@ -145,7 +145,7 @@ sns.barplot(x="WHO Region", y='Recovered', data=data_frame, palette='cubehelix')
 # Pie chart for recovered cases by WHO Region
 plt.figure(figsize=(4, 4))
 plt.pie(Who_regionsrec, labels=Who_regionsrec.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('cubehelix'))
-plt.show()
+st.pyplot()
 
 # Group by WHO Region for Active cases
 Who_regionsact = data_frame.groupby('WHO Region')['Active'].sum().sort_values()
@@ -159,12 +159,12 @@ sns.barplot(x="WHO Region", y='Active', data=data_frame, palette='pastel')
 plt.figure(figsize=(4, 4))
 plt.pie(Who_regionsact, labels=Who_regionsact.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
 plt.title("Active cases vs WHO Region")
-plt.show()
+st.pyplot()
 
 # Line plot for percentage increase over 1 week
 plt.figure(figsize=(15, 4))
 sns.lineplot(x='1 week % increase', y="WHO Region", data=data_frame)
-plt.show()
+st.pyplot()
 
 # Analysis specific to Nepal
 nepal = data_frame[data_frame['Country/Region'] == 'Nepal']
@@ -178,4 +178,4 @@ sns.barplot(x=['Confirmed', 'Deaths', 'Recovered', 'Active'],
 plt.xlabel("Count")
 plt.ylabel("Cases")
 plt.title('COVID-19 Cases in Nepal')
-plt.show()
+st.pyplot()
