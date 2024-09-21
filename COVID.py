@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from mpl_toolkits import mplot3d
+import streamlit as st
+
 
 import os
 import warnings
